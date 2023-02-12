@@ -1,22 +1,21 @@
 #include <stdio.h>
-#include <stdlib.h>
-//A program that prints the alphabet in lowercase, and then in uppercase,followed by a new line.(question 2)//
-int main(void) {
-  char c;
+/*a program that prints the alphabet in lowercase, printing all letters except q and e, followed by a new line.*/
 
-  for (c = 'a'; c <= 'z'; c++) {
-    putchar(c);
-  }
+int main(void)
+{
 
-  for (c = 'A'; c <= 'Z'; c++) {
-    putchar(c);
-  }
+    char c;
 
-  putchar('\n');
+    for (c = 'a'; c <= 'z'; c++)
+    {
+        /* exclude q and e while printing*/
+        if (c != 'q' && c != 'e')
+        {
+            putchar(c);
+        }
+    }
 
-  return 0;
+    putchar('\n');
+
+    return (0);
 }
-
-
-
-
