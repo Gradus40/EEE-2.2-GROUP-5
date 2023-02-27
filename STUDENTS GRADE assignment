@@ -1,0 +1,52 @@
+#include<stdio.h>
+
+int main()
+{
+    char name[20];
+    float programming, maths, O_S, average;
+    char grade;
+    char remark[20];
+    
+    printf("Enter the name of the student: ");
+    scanf("%s", name);
+    
+    printf("Enter marks in Programming: ");
+    scanf("%f", &programming);
+    
+    printf("Enter marks in Maths: ");
+    scanf("%f", &maths);
+    
+    printf("Enter marks in O/S: ");
+    scanf("%f", &O_S);
+    
+    average = (programming + maths + O_S) / 3;
+    
+    if(average >= 90)
+        grade = 'A';
+    else if(average >= 80 && average < 90)
+        grade = 'B';
+    else if(average >= 70 && average < 80)
+        grade = 'C';
+    else if(average >= 60 && average < 70)
+        grade = 'D';
+    else
+        grade = 'F';
+    
+    if(grade == 'A')
+        strcpy(remark, "Excellent");
+    else if(grade == 'B')
+        strcpy(remark, "Good");
+    else if(grade == 'C')
+        strcpy(remark, "Average");
+    else if(grade == 'D')
+        strcpy(remark, "Poor");
+    else
+        strcpy(remark, "Fail");
+    
+    printf("Name of the student: %s\n", name);
+    printf("Average marks of the student: %.2f\n", average);
+    printf("Grade of the student: %c\n", grade);
+    printf("Remark of the student: %s\n", remark);
+    
+    return 0;
+}
