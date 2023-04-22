@@ -110,56 +110,56 @@ void addpatient() {
                     info.id = 0;
                 }
 
-                // Prompt the user to input hospital admission details
+                // Prompt the user to input hospital admission details//
                 printf("\n\t\t\tEnter Hospital Admitted: ");
                 scanf("%s", info.hospital_admitted);
                 printf("\n\t\t\tEnter wing admitted: ");
                 scanf("%s", info.wing_admitted);
-                // Prompt the user to input fees for doctor, lab tests and drugs
+                // Prompt the user to input fees for doctor, lab tests and drugs//
                 printf("\n\t\t\tEnter doctor fee: ");
                 scanf("%d", &info.doctor_fee);
                 printf("\n\t\t\tEnter lab test fee: ");
                 scanf("%d", &info.lab_test_fee);
                 printf("\n\t\t\tEnter drug fee: ");
                 scanf("%d", &info.drug_fee);
-                // Prompt the user to input the arrival and discharge dates
+                // Prompt the user to input the arrival and discharge dates//
                 printf("\n\t\t\tEnter arrival date(DD/MM/YYYY): ");
                 scanf("%d", &info.arrival_date);
                 printf("\n\t\t\tEnter discharge date(DD/MM/YYYY): ");
                 scanf("%d", &info.discharge_date);
                 printf("\n\t\t\t_______________________________________\n");
 
-                 // Check if the file was opened successfully
+                 // Check if the file was opened successfully//
                 if (fp == NULL) {
                     printf("\t\t\tCan't Open File\n");
                 } else {
-                    // Write the patient information to the file
+                    // Write the patient information to the file//
                     fprintf(fp, "%s %s %d %d %d %d %d %s %s %d %d %d %d %d\n",
                    info.name, info.gender, info.age, info.height, info.weight, info.id,
                    info.bcn, info.hospital_admitted, info.wing_admitted,
                    info.doctor_fee, info.lab_test_fee, info.drug_fee,
                    info.arrival_date, info.discharge_date);
 
-                // Ask the user if they want to add another patient
+                // Ask the user if they want to add another patient//
              printf("\n\t\t\tPatient information added successfully!\n");
              fclose(fp);
         }
             printf("\n\t\t\tDo you want to add another record? (y/n): ");
-            // Clear the input buffer before reading the user's response
+            // Clear the input buffer before reading the user's response//
             fflush(stdin);
             scanf("%c", &another);
-            // Continue looping and prompting the user for input until they indicate they do not want to add another record
+            // Continue looping and prompting the user for input until they indicate they do not want to add another record//
         } while (another == 'y' || another == 'Y');
 
         patientrecords();
 }
 void patientrecords() {
-         // Clear the screen and print the header for the patient records
+         // Clear the screen and print the header for the patient records//
             clrscr();
             printf("\t\t\t\t======Patient Records======\n\n\n");
             FILE *fp;
             struct patient info;
-            // Open the patient_info.txt file in read mode
+            // Open the patient_info.txt file in read mode//
             fp = fopen("patient_info.txt", "r");
             // Check if the file was successfully opened
             if (fp == NULL) {
