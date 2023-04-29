@@ -63,6 +63,7 @@ int main() {
                 break;
             case 5:
                 editrecord();
+                break;
             case 6:
                 exit(0);
             default:
